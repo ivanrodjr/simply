@@ -43,6 +43,19 @@
     {{!-- Ghost outputs important scripts and data with this tag --}}
     {{ghost_foot}}
 
+    {{!-- Disquss Short Name --}}
+     <script>
+        var disqusShortName = 'hoolitest';
+    </script>
+
+    {{!-- Social Media Accounts --}}
+    <script>
+        var followSocialMedia = {
+            'github': ['https://github.com/ivanrodjr','Github @ivanrodjr'],
+            'linkedin':['https://www.linkedin.com/in/ivanrodriguezjr/','LinkedIn @ivanrodriguezjr'],
+        };
+    </script>
+
     {{!-- Blog URL --}}
     <script>
         var siteUrl = '{{@site.url}}';
@@ -66,7 +79,7 @@
     {{!-- Back to top --}}
     <div class="back-to-top js-back-to-top u-hide-before-lg u-pointer u-fixed">
         {{> "icons/arrow-top"}}
-        <p class="back-to-top-text u-fontSizeBase u-fontWeightSemibold">{{t "GO TOP"}}</p>
+        <p class="back-to-top-text u-fontSizeBase u-fontWeightSemibold">{{t "TOP"}}</p>
     </div>
 </body>
 </html>
