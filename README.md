@@ -6,21 +6,19 @@
 > *Simple and Elegant Theme.*
 
 Hello, I created this theme for Ghost with inspiration from [Medium](https://medium.com/).
-It is available for free so you can use on your site. It is strictly forbidden to use it for commercial use. If you have any suggestions to improve the theme,  you can send me a tweet [@GodoFredoNinja](https://goo.gl/y3aivK)
+It is available for free so you can use on your site. If you have any suggestions to improve the theme,  you can send me a tweet [@GodoFredoNinja](https://goo.gl/y3aivK)
 
 ## If you have a ❤ heart and value my work. 🙏 Please, help me with a small donation on [Paypal](https://www.paypal.me/godofredoninja) or [Here](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Y7UB5Q8GVN3HN&source=url). It'll help motivate me to update the theme with many improvements
-
-[![donate](./donate.gif)](https://www.paypal.me/godofredoninja)
 
 ![Simply free theme for ghost](./screenshot.jpg)
 
 ## Demo
 
-You can see Simply in action on my Page [Demo](https://goo.gl/V7moIY)
+You can see Simply in action on my Page [Demo](https://godofredo.ninja)
 
 ## Featured
 
-- Support for different languages
+- Support for different Languages
 - [AMP](https://github.com/godofredoninja/Hodor-AMP-Ghost) Template
 - Includes 4 templates for Home Page
 - Responsive Layout
@@ -31,6 +29,8 @@ You can see Simply in action on my Page [Demo](https://goo.gl/V7moIY)
 - Template Page Newsletter (Mailchimp)
 - Template Page Podcast
 - Template Page Tag
+- Template Page Authors
+- Template page Contact
 - Template Video Post Format
 - Template Image post Format
 - Template not Image
@@ -43,9 +43,8 @@ You can see Simply in action on my Page [Demo](https://goo.gl/V7moIY)
 - Instagram random in (Post)
 - Page 404 (Multiple faces emoticons)
 - Pagination Infinite Scroll
-- Support for comments (Facebook or Disqus)
-- Comment Counter (Facebook or Disqus)
-- Buttons to share the article (Facebook - Twitter - Whatsapp)
+- Support Disqus comments and Comment Count
+- Buttons to share on social media
 - YouTube, Vimeo, kickstarter, dailymotion => Responsive
 - Varied colors to change the look of the theme
 - Lazy load Image for better performance only in backgrounds
@@ -56,7 +55,7 @@ You can see Simply in action on my Page [Demo](https://goo.gl/V7moIY)
 - [Web Browser Support for Simply](#web-browser-support-for-simply)
 - [Ghost Settings](#ghost-settings)
 - [Simply Settings](#simply-settings)
-  - [Social Media Links](#1-social-media-links)
+  - [Social Media](#1-social-media)
   - [YouTube Subscribe Button](#2-youtube-subscribe-button)
   - [Instagram](#3-instagram)
   - [Comments](#4-comments)
@@ -66,6 +65,8 @@ You can see Simply in action on my Page [Demo](https://goo.gl/V7moIY)
 - [Home Page](#home-page)
 - [Post Format](#post-format)
 - [Tags Page](#tags-page)
+- [Author Page](#author-page)
+- [Contact Page](#contact-page)
 - [Newsletter Page](#newsletter-page)
 - [Podcast Page](#podcast-page)
 - [Ads](#ads)
@@ -75,7 +76,7 @@ You can see Simply in action on my Page [Demo](https://goo.gl/V7moIY)
 
 ## Web Browser Support for Simply
 
-Simply supports the following web [browsers](http://caniuse.com/#search=flexbox)
+Simply supports the following web [browsers](http://caniuse.com/#search=flexbox).
 
 ## Ghost Settings
 
@@ -87,7 +88,7 @@ Simply supports the following web [browsers](http://caniuse.com/#search=flexbox)
 
 > You don't have to add all the Simply configurations. only the ones you need
 
-### 1. Social Media Links
+### 1. Social Media
 
 > Facebook and Twitter is not necessary because I use them from the ghost settings
 
@@ -98,19 +99,19 @@ Add the Social Links only for the services you want to appear in the header sect
 ```html
 <script>
   var followSocialMedia = {
-  'youtube': 'https://...',
-  'instagram': 'https://...',
-  'snapchat': 'https://...',
-  'dribbble': 'https://...',
-  'github': 'https://...',
-  'linkedin':'https://...',
-  'spotify':'https://...',
-  'codepen':'https://...',
-  'behance':'https://...',
-  'flickr':'https://...',
-  'pinterest':'https://...',
-  'telegram':'https://...',
-  'rss':'https://...',
+  'youtube': ['YOUR_URL','YOUR_TITLE'],
+  'instagram': ['YOUR_URL','YOUR_TITLE'],
+  'snapchat': ['YOUR_URL','YOUR_TITLE'],
+  'dribbble': ['YOUR_URL','YOUR_TITLE'],
+  'github': ['YOUR_URL','YOUR_TITLE'],
+  'linkedin':['YOUR_URL','YOUR_TITLE'],
+  'spotify':['YOUR_URL','YOUR_TITLE'],
+  'codepen':['YOUR_URL','YOUR_TITLE'],
+  'behance':['YOUR_URL','YOUR_TITLE'],
+  'flickr':['YOUR_URL','YOUR_TITLE'],
+  'pinterest':['YOUR_URL','YOUR_TITLE'],
+  'telegram':['YOUR_URL','YOUR_TITLE'],
+  'rss':['YOUR_URL','YOUR_TITLE'],
 };
 </script>
 ```
@@ -153,27 +154,15 @@ First, you will need to get your account `userName` and `userId` and `accessToke
 
 ### 4. Comments
 
-> Simply supports Disqus comments and Facebook comments as well as comment counting
+Simply supports Disqus comments as well as comment counting
 
-**Disqus Comments** — First, you will need to get your account `disqusShortName`
-
-➡️ `Dashboard -> Code injection -> Site Footer`
-
-```html
-<script>
-  var disqusShortName = 'YOUR_DISQUS_SHORTCUT_HERE';
-</script>
-```
-
-**OR**
-
-**Facebook Comments** — Changing the Language (`en_US` - `es_ES` - `es_LA`) more information link below [language](https://developers.facebook.com/docs/plugins/comments/#language)
+— First, you will need to get your account `disqusShortName`
 
 ➡️ `Dashboard -> Code injection -> Site Footer`
 
 ```html
 <script>
-  var facebookLocaleComments = 'en_US';
+var disqusShortName = 'YOUR_DISQUS_SHORTCUT_HERE';
 </script>
 ```
 
@@ -188,13 +177,15 @@ First, you will need to get your account `userName` and `userId` and `accessToke
 3. Get the Content API Key and replace the demo key with this one
 4. Get the admin domain. This will be different in some cases
 
+![Ghost API](./documentation/ghost-api.jpg)
+
 ➡️ `Dashboard -> Code injection -> Site Footer`
 
 ```html
 <script>
   var searchSettings = {
     key: 'ADD_YOUR_API_KEY',
-    host: 'https://demo.ghost.io',
+    url: 'https://demo.ghost.io',
   };
 </script>
 ```
@@ -205,11 +196,11 @@ OR - Adding parameters to the search
 <script>
 var searchSettings = {
   key: 'ADD_YOUR_API_KEY',
-  host: 'https://demo.ghost.io',
+  url: 'https://demo.ghost.io',
   /* This is optional */
   options: {
     keys: [
-        'title',
+      'title',
     ],
     limit: 10,
   },
@@ -225,15 +216,13 @@ var searchSettings = {
       formats: '',
     },
   },
-}
+};
 </script>
 ```
 
-The search engine that includes simply is very powerful, supports almost all languages and you can customize to your liking.
+The search engine that includes Simply is very powerful, supports almost all languages and you can customize to your liking.
 
-Read the following link to learn more about the search engine [Read More](https://github.com/HauntedThemes/ghost-search)
-
----
+Read more about the search engine [Read More](https://github.com/HauntedThemes/ghost-search)
 
 ## Theme Translation
 
@@ -244,6 +233,7 @@ Read the following link to learn more about the search engine [Read More](https:
 - `de` — German - By [dkbast](https://github.com/dkbast)
 - `tr` — Turkish - By [Mertcan GÖKGÖZ](https://github.com/MertcanGokgoz)
 - `fr-CA` — Canadian French - By [Pascal Andy](https://github.com/pascalandy)
+- `ru` —  Russian - By [Partizan007](https://github.com/partizan007)
 
 ![simply theme ghost Language](./documentation/language.jpg)
 
@@ -265,7 +255,7 @@ To customize the AMP page [read here](https://github.com/godofredoninja/Hodor-AM
 
 ## Home Page
 
-> Simply - come with 3 Home page with different layout options
+> Simply - come with 4 Home page with different layout options
 
 - First back up your routes in your ghost settings `Labs -> Routes -> Download current routes.yml`
 - Re-download the Route and edit `routes.yml` line `collections -> template`
@@ -303,8 +293,7 @@ collections:
 
 - vimeo
 - Dailymotion
-- Youtube
-- Vid
+- YouTube
 - kickstarter
 
 > Add video where convenient. When you change the theme you will not have problems and not have Problem in your AMP Template
@@ -313,20 +302,102 @@ collections:
 
 > A page will be displayed with all tags sorted from highest to lowest number of articles.
 
-- To create the tags page you just have to create a new story
+- Create a new page
 - Choose your favorite url and title
-- Click the Turn this post into a static page checkbox
 - Select the `Archive Tags` template from the Template dropdown
 - Publish the page
 - To add the page to the navigation
 
 ![Tag Archive](./documentation/tag-archive.jpg)
 
+## Author Page
+
+- Create a new page
+- Choose your favorite url and title
+- Select the `Archive Author` template from the Template dropdown
+- Publish the page
+- To add the page to the navigation
+
+## Contact Page
+
+- Create a new page
+- Choose your favorite url and title
+- Select the `Archive Contact` template from the Template dropdown
+- Publish the page
+- To add the page to the navigation
+
+➡️ Add your content and the contact form code using [FORMSPREE](https://formspree.io/) as a service. Please check the code example below.
+
+```html
+<form action="https://formspree.io/your@email.com" class="u-marginBottom40 u-marginAuto u-maxWidth740" method="POST">
+  <div class="row">
+    <div class="col s12 m6 u-marginBottom30">
+      <input name="name" type="text" placeholder="Your Name" required>
+    </div>
+    <div class="col s12 m6 u-marginBottom30">
+      <input name="email" type="email" placeholder="Your Email" required>
+    </div>
+
+    <div class="col s12 u-marginBottom30"><textarea name="message" placeholder="Type Message" required></textarea></div>
+    <div class="col s12 u-textAlignCenter u-marginBottom40"><button type="submit" class="button button--large button--dark">Send Message</button></div>
+  </div>
+</form>
+```
+
+➡️ PHONE - ADDRESS - EMAIL
+
+```html
+<div class="pae row u-textAlignCenter">
+    <div class="col s12 m6 l4 u-marginBottom30">
+        <div class="pae-icon">
+            <svg viewBox="0 0 24 24" width="64" height="64" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12" y2="18"></line></svg>
+        </div>
+        <h4 class="pae-title">PHONE</h4>
+        <div class="pae-des u-fontSizeBase">
+            <p>+51 987 659 249</p>
+            <p>+51 01 424 0827</p>
+        </div>
+    </div>
+
+    <div class="col s12 m6 l4 u-marginBottom30">
+        <div class="pae-icon">
+            <svg viewBox="0 0 24 24" width="64" height="64" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        </div>
+        <h4 class="pae-title">ADDRESS</h4>
+        <div class="pae-des u-fontSizeBase">
+            <p>Parque de la Reserva, Jr. Madre de Dios, Cercado de Lima, Perú</p>
+        </div>
+    </div>
+
+    <div class="col s12 m6 l4 u-marginBottom30">
+        <div class="pae-icon">
+            <svg viewBox="0 0 24 24" width="64" height="64" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+        </div>
+        <h4 class="pae-title">EMAIL</h4>
+        <div class="pae-des u-fontSizeBase">
+            <p>hello@godofredo.ninja</p>
+            <p>test@godofredo.ninja</p>
+        </div>
+    </div>
+</div>
+```
+
+➡️ Google Maps
+
+```html
+<div class="archive-contact-maps u-marginBottom40 u-textAlignCenter">
+    <div class="video-responsive">
+      ADD_YOUR_IFRAME_GOOGLE_MAPS
+    </div>
+</div>
+```
+
+![Contact Page](./documentation/contact.jpg)
+
 ## Newsletter Page
 
-- To create the Newsletter page you just have to create a new story
+- Create a new page
 - Choose your favorite url and title
-- Click the Turn this post into a static page checkbox
 - Select the `Archive Newsletter` template from the Template dropdown
 - Write the list as normal in your content
 - To have the **Mailchimp** form copy the code and add an `HTML` section in Ghost then change the form action url.
@@ -337,18 +408,14 @@ Example: `<form action="https://ninja.us10.list-manage.com/subscribe/post?u=5c52
 <!-- <godo-nesletter> Mailchimp -->
 <div class="godo-ne">
   <!-- Replace => Action -->
-  <form id="godo-form" class="godo-ne-form" action="YOUR_URL_OF_LIST_Mailchimp" method="get">
+  <form id="godo-form" class="godo-ne-form" action="YOUR_URL_OF_LIST_Mailchimp" method="post" target="_blank">
       <label for="fieldEmail">Email Address</label>
       <div class="godo-ne-form-group">
-        <input class="godo-ne-input" name="EMAIL" type="email" placeholder="yourname@example.com" required="">
+        <input id="fieldEmail" class="godo-ne-input" name="EMAIL" type="email" placeholder="yourname@example.com" required="">
         <button class="godo-ne-button button" type="submit">Subscribe</button>
       </div>
       <small>No marketing campaigns. No jibber jabber. Unsubscribe anytime.</small>
   </form>
-  <div class="godo-ne-success u-hide">
-    <h3>✉️ Nice! Please check your email</h3>
-    <p>Click on the link in your inbox to confirm your subscription</p>
-  </div>
 </div>
 ```
 
@@ -358,21 +425,21 @@ Example: `<form action="https://ninja.us10.list-manage.com/subscribe/post?u=5c52
 <div class="godo-n-q">
 
   <div class="godo-n-q-i">
-    <img src="https://blog.ghost.org/content/images/2018/04/tim.jpeg">
+    <img src="/assets/images/avatar.png" alt="Hello">
     <h3>Tim Cook</h3>
     <div class="godo-n-q-d">CEO, Apple</div>
     <blockquote>"This is a pretty fantastic newsletter tbh, I definitely recommend it"</blockquote>
   </div>
 
   <div class="godo-n-q-i u-hide-before-md">
-    <img src="https://blog.ghost.org/content/images/2018/04/satya.jpg">
+    <img src="/assets/images/avatar.png" alt="Hello">
     <h3>Satya Nadella</h3>
     <div class="godo-n-q-d">CEO, Microsoft</div>
     <blockquote>"Finally, this newsletter is something we can really agree on"</blockquote>
   </div>
 
   <div class="godo-n-q-i u-hide-before-md">
-    <img src="https://blog.ghost.org/content/images/2018/04/gravatar-j8.jpg">
+    <img src="/assets/images/avatar.png" alt="Hello">
     <h3>John O'Nolan</h3>
     <div class="godo-n-q-d">CEO, Ghost</div>
     <blockquote>"I should really get around to organising some quotes one of these days"</blockquote>
@@ -388,10 +455,9 @@ Example: `<form action="https://ninja.us10.list-manage.com/subscribe/post?u=5c52
 
 ## Podcast Page
 
-- To create the Podcast Page you just have to create a new story
+- Create a new page
 - Choose your favorite title
 - Use the url `podcast`
-- Click the Turn this post into a static page checkbox
 - In your articles use the internal tags `#podcast`
 - First back up your routes in your ghost settings `Labs -> Routes -> Download current routes.yml`
 - Re-download the Route and edit `routes.yml` line `routes`
@@ -463,7 +529,7 @@ You have to enter the following directory `partials/ad` and add in each file you
 — It is important to add the following style in your ghost settings. in the section `Code injection -> Blog Header`
 
 ```html
-<style>.godo-ad-article-top,.godo-ad-author-top,.godo-ad-home-top,.godo-ad-podcast-top,.godo-ad-tag-top{margin-top:30px}.godo-ad-article-medium,.godo-ad-footer,.godo-ad-home-medium,.godo-ad-medium,.godo-ad-podcast-footer,.godo-ad-podcast-medium{margin-bottom:30px}</style>
+<style>.godo-ad-article-top,.godo-ad-author-top,.godo-ad-home-top,.godo-ad-podcast-top,.godo-ad-tag-top{margin-top:30px}.godo-ad-article-medium,.godo-ad-footer,.godo-ad-home-medium,.godo-ad-medium,.godo-ad-podcast-footer,.godo-ad-podcast-medium,.godo-ad-home-top,.godo-ad-home-footer,.godo-ad-article-footer {margin-bottom:30px}</style>
 ```
 
 ## Change Theme Color
@@ -474,68 +540,18 @@ You have to enter the following directory `partials/ad` and add in each file you
 
 To change the color of the Simply theme select one of the theme styles below and copy it into the:
 
-`Setting -> Code Injection -> Blog Header`
+➡️ `Setting -> Code Injection -> Blog Header`
 
 ```html
-<!-- 1.- Theme Simply Deep Orange -->
-<style>.u-bgheader{background-color:#d25704}.u-menu-color,.u-menu-color a{color:#ffc79e}.nav-logo,.search-toggle:hover,.u-menu-color a.active,.u-menu-color a:hover{color:#fff}.menu-toggle span{background-color:#ffc79e}.link--accent,.u-primary-color{color:#b34e11}.button--primary{color:#b34e11;border-color:#b34e11}.godo-n-q-d,.godo-ne-form label,.ne-t{color:#b34e11}.godo-ne-button:hover{background-color:#b34e11}.ne-body:after,.ne-body:before,.ne-t:before{background-color:#d58b59}.listen-btn{color:#d25704;border-color:#d25704}.listen-btn:hover,.subscribe-btn{background-color:#d25704}mark{background-image:linear-gradient(180deg,#ffe1c2,#ffe1c2)}</style>
-
-<!-- 2.- Theme Simply Cyan -->
-<style>.u-bgheader{background-color:#6ac8cf}.u-menu-color,.u-menu-color a{color:#116468}.nav-logo,.search-toggle:hover,.u-menu-color a.active,.u-menu-color a:hover{color:#fff}.menu-toggle span{background-color:#116468}.link--accent,.u-primary-color{color:#277d83;fill:#277d83}.button--primary{color:#277d83;border-color:#277d83}.subscribe-btn{background-color:#277d83}.godo-n-q-d,.godo-ne-form label,.ne-t{color:#36aeb7}.godo-ne-button:hover{background-color:#36aeb7}.ne-body:after,.ne-body:before,.ne-t:before{background-color:#6bc9d0}.listen-btn{color:#277d83;border-color:#277d83}.listen-btn:hover{background-color:#277d83}mark{background-image:linear-gradient(180deg,#dff6f8,#dff6f8)}</style>
-
-<!-- 3.- Theme Simply Blue Dark -->
-<style>.u-bgheader{background-color:#1e3757}.u-menu-color,.u-menu-color a{color:#c1cbdb}.nav-logo,.search-toggle:hover,.u-menu-color a.active,.u-menu-color a:hover{color:#fff}.menu-toggle span{background-color:#c1cbdb}.link--accent,.u-primary-color{color:#1e3858;fill:#1e3858}.button--primary{color:#1e3858;border-color:#1e3858}.subscribe-btn{background-color:#1e3757}.godo-n-q-d,.godo-ne-form label,.ne-t{color:#1e3858}.godo-ne-button:hover{background-color:#1e3858}.ne-body:after,.ne-body:before,.ne-t:before{background-color:rgba(30,56,88,.54)}.listen-btn{color:#1e3757;border-color:#1e3757}.listen-btn:hover{background-color:#1e3757}mark{background-image:linear-gradient(180deg,#dff6f8,#dff6f8)}</style>
-
-<!-- 4.- Theme Simply Red -->
-<style>.u-bgheader{background-color:#c43235}.u-menu-color,.u-menu-color a{color:#ffbbb4}.nav-logo,.search-toggle:hover,.u-menu-color a.active,.u-menu-color a:hover{color:#fff}.menu-toggle span{background-color:#ffbbb4}.link--accent,.u-primary-color{color:#c53236;fill:#c53236}.button--primary{color:#c53236;border-color:#c53236}.subscribe-btn{background-color:#c43235}.godo-n-q-d,.godo-ne-form label,.ne-t{color:#c53236}.godo-ne-button:hover{background-color:#c53236}.ne-body:after,.ne-body:before,.ne-t:before{background-color:rgba(197,50,54,.46)}.listen-btn{color:#c43235;border-color:#c43235}.listen-btn:hover{background-color:#c43235}mark{background-image:linear-gradient(180deg,#ffdcd6,#ffdcd6)}</style>
-
-<!-- 5.- Theme Simply blue semi dark -->
-<style>.u-bgheader{background-color:#3367d6}.u-menu-color,.u-menu-color a{color:#c1cde6}.nav-logo,.search-toggle:hover,.u-menu-color a.active,.u-menu-color a:hover{color:#fff}.menu-toggle span{background-color:#c1cde6}.link--accent,.u-primary-color{color:#2b53a8;fill:#2b53a8}.button--primary{color:#3367d6;border-color:#3367d6}.subscribe-btn{background-color:#3367d6}.godo-n-q-d,.godo-ne-form label,.ne-t{color:#3367d6}.godo-ne-button:hover{background-color:#3367d6}.ne-body:after,.ne-body:before,.ne-t:before{background-color:rgba(49,103,216,.43)}.listen-btn{color:#3367d6;border-color:#3367d6}.listen-btn:hover{background-color:#3367d6}mark{background-image:linear-gradient(180deg,rgba(49,103,216,.11),rgba(49,103,216,.13))}</style>
-
-<!-- 6.- Theme Simply dark -->
-<style>.u-bgheader{background-color:#000}.u-menu-color,.u-menu-color a{color:#b1aeae}.nav-logo,.search-toggle:hover,.u-menu-color a.active,.u-menu-color a:hover{color:#ece9e9}.menu-toggle span{background-color:#b1aeae}.button--primary{color:#000;border-color:#000}.subscribe-btn{background-color:#000}.godo-n-q-d,.godo-ne-form label,.ne-t{color:rgba(0,0,0,.84)}.godo-ne-button:hover{background-color:rgba(0,0,0,.84)}.ne-body:after,.ne-body:before,.ne-t:before{background-color:#b1aeae}mark{background-image:linear-gradient(180deg,#f3f0ef,#f3f0ef)}</style>
-
-<!-- 7.- Theme Simply Lavender -->
-<style>.u-bgheader{background-color:#8da7d5}.u-menu-color,.u-menu-color a{color:#dce6fa}.search-toggle:hover,.u-menu-color a.active,.u-menu-color a:hover{color:#fcffff}.nav-logo{color:#fff}.menu-toggle span{background-color:#dce6fa}.link--accent,.u-primary-color{color:#748ab0;fill:#748ab0}.button--primary{color:#8da7d5;border-color:#8da7d5}.subscribe-btn{background-color:#8da7d5}.godo-n-q-d,.godo-ne-form label,.ne-t{color:#8da7d5}.godo-ne-button:hover{background-color:#8da7d5}.ne-body:after,.ne-body:before,.ne-t:before{background-color:#8da7d6}.listen-btn{color:#8da7d5;border-color:#8da7d5}.listen-btn:hover{background-color:#8da7d5}mark{background-image:linear-gradient(180deg,#ebf1ff,#ebf1ff)}</style>
-
-<!-- 8.- Theme Simply Dark Green -->
-<style>.u-bgheader{background-color:#006400}.u-menu-color,.u-menu-color a{color:#b5dda8}.nav-logo,.search-toggle:hover,.u-menu-color a.active,.u-menu-color a:hover{color:#fff}.menu-toggle span{background-color:#b5dda8}.link--accent,.u-primary-color{color:#006400;fill:#006400}.button--primary{color:#006400;border-color:#006400}.subscribe-btn{background-color:#006400}.godo-n-q-d,.godo-ne-form label,.ne-t{color:#006400}.godo-ne-button:hover{background-color:#006400}.ne-body:after,.ne-body:before,.ne-t:before{background-color:rgba(3,101,0,.8)}.listen-btn{color:#006400;border-color:#006400}.listen-btn:hover{background-color:#006400}mark{background-image:linear-gradient(180deg,#defad3,#defad3)}</style>
-
-<!-- 9.- Theme Simply Hot Pink   -->
-<style>.u-bgheader{background-color:#d43d5a}.u-menu-color,.u-menu-color a{color:#ffbfc6}.search-toggle:hover,.u-menu-color a.active,.u-menu-color a:hover{color:#fff1f4}.nav-logo{color:#fff}.menu-toggle span{background-color:#ffbfc6}.link--accent,.u-primary-color{color:#aa3a50;fill:#aa3a50}.button--primary{color:#aa3a50;border-color:#aa3a50}.subscribe-btn{background-color:#d43d5a}.godo-n-q-d,.godo-ne-form label,.ne-t{color:#d43d5a}.godo-ne-button:hover{background-color:#d43d5a}.ne-body:after,.ne-body:before,.ne-t:before{background-color:rgba(213,61,91,.6)}.listen-btn{color:#d43d5a;border-color:#d43d5a}.listen-btn:hover{background-color:#d43d5a}mark{background-image:linear-gradient(180deg,#ffdce1,#ffdce1)}</style>
-```
-
-> If you don't like the colors above, then play with your favorite colors. Just change the colors in the following code
-
-```html
-<style>
-  /* Header - Menu */
-  .u-bgheader { background-color: #d25704 }
-  .u-menu-color, .u-menu-color a { color: #ffc79e }
-  .u-menu-color a:hover, .search-toggle:hover, .nav-logo, .u-menu-color a.active { color: #fff }
-  .menu-toggle span { background-color: #ffc79e }
-  /* Color links */
-  .u-primary-color, .link--accent { color: #b34e11 }
-  /* Primary Color button*/
-  .button--primary {
-    color:#b34e11;
-    border-color:#b34e11
-  }
-  /* Newsletter */
-  .godo-n-q-d,.godo-ne-form label,.ne-t { color:#b34e11 }
-  .godo-ne-button:hover { background-color:#b34e11 }
-  .ne-body:after,.ne-body:before,.ne-t:before { background-color:#d58b59 }
-  /* Podcast */
-  .listen-btn {
-    color:#d25704;
-    border-color:#d25704
-  }
-  .listen-btn:hover { background-color:#d25704 }
-  /* subscribe BTN in the post */
-  .subscribe-btn { background-color: #d25704}
-  /* Mark in Post */
-  mark { background-image:linear-gradient(180deg,#ffe1c2,#ffe1c2) }
-</style>
+<link href="/assets/styles/theme/deep-orange.css" rel="stylesheet">
+<link href="/assets/styles/theme/cyan.css" rel="stylesheet">
+<link href="/assets/styles/theme/blue-dark.css" rel="stylesheet">
+<link href="/assets/styles/theme/red.css" rel="stylesheet">
+<link href="/assets/styles/theme/blue-semi-dark.css" rel="stylesheet">
+<link href="/assets/styles/theme/dark.css" rel="stylesheet">
+<link href="/assets/styles/theme/lavender.css" rel="stylesheet">
+<link href="/assets/styles/theme/green.css" rel="stylesheet">
+<link href="/assets/styles/theme/pink.css" rel="stylesheet">
 ```
 
 ## Tracking Google Tag Mananger
@@ -609,13 +625,14 @@ With [Google Tag Manager](https://tagmanager.google.com), there are a million di
 
 ```html
 <script>
-  /* Tracking With Google Tag Mananger*/
-   $('.godo-tracking').bind('click', function (e) {
-    var $this = $(this);
-    var godoCategory = $this.attr('data-event-category');
-    var godoAction = $this.attr('data-event-action');
-    var godoLabel = $this.attr('data-event-label');
-    var godoValue = $this.attr('data-event-non-interaction');
+/* Tracking With Google Tag Mananger */
+var godoTracking = document.querySelectorAll('.godo-tracking');
+godoTracking.forEach(function(item) {
+  item.addEventListener('click', function() {
+    var godoCategory = this.getAttribute('data-event-category');
+    var godoAction = this.getAttribute('data-event-action');
+    var godoLabel = this.getAttribute('data-event-label');
+    var godoValue = this.getAttribute('data-event-non-interaction');
 
     dataLayer.push({
       'event' : 'godoGhostEvent',
@@ -625,6 +642,7 @@ With [Google Tag Manager](https://tagmanager.google.com), there are a million di
       'eventValue' : godoValue,
     });
   });
+});
 </script>
 ```
 
@@ -642,12 +660,12 @@ Take a look at the [Prismjs Supported Language List](http://prismjs.com/#languag
 - [Hodor AMP](https://github.com/godofredoninja/Hodor-AMP-Ghost)
 - [Normalize](https://necolas.github.io/normalize.css/)
 - [Ghost Search](https://github.com/HauntedThemes/ghost-search)
-- [Fuzzysort](https://github.com/farzher/fuzzysort)
 - [Prismjs](http://prismjs.com/)
-- [Lightense Images](https://github.com/sparanoid/lightense-images)
-- [Vanilla Lazyload](https://github.com/verlok/lazyload)
+- [Medium Zoom](https://github.com/francoischalifour/medium-zoom)
+- [Lazysizes](https://github.com/aFarkas/lazysizes)
 - [Fonts](https://fonts.google.com/?query=pt&selection.family=PT+Serif|Source+Sans+Pro)
+- [Safari Light - Mockup](https://www.uplabs.com/posts/safari-light-version)
 
 ## Copyright & License
 
-Copyright (c) 2019 GodoFredoNinja - Released under the [CC BY-NC 4.0](LICENSE).
+Copyright (c) 2019 GodoFredoNinja - Released under the [GPLv3](LICENSE).
